@@ -24,6 +24,9 @@ class SetContainer extends Component{
         //advert state
         advert_open:false,
         advert_is_live_open:false,
+        advertCond:1,
+        advertInterTime:0,
+        advertMessage:"",
         
     };
 
