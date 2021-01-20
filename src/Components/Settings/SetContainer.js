@@ -1,11 +1,31 @@
 import React, {Component} from 'react'
 import {Container} from '@material-ui/core'
 import ShowcaseSet from './ShowcaseSet'
+import AdvertSet from './AdvertSet'
 import SaveButton from './SaveButton'
 
 class SetContainer extends Component{
 
-    state = {}
+    state = {
+        //showcase state
+        auto:true,
+        cmd:false,
+        guard:true,
+        vip:false,
+        ul:true,
+        manager:false,
+        medal:true,
+        block:false,
+        gift:true,
+        welcome:false,
+        subscribe:true,
+        local:false,
+        
+        //advert state
+        advert_open:false,
+        advert_is_live_open:false,
+        
+    };
 
     render(){
 
@@ -19,8 +39,24 @@ class SetContainer extends Component{
 
 
         return(
-            <Container>
-                <ShowcaseSet handleChowcaseChange = {handleChowcaseChange}/>
+            <Container maxWidth="sm">
+                <ShowcaseSet 
+                auto={this.state.auto} 
+                cmd={this.state.cmd}
+                guard={this.state.guard}
+                vip={this.state.vip}
+                ul={this.state.ul}
+                manager={this.state.manager}
+                medal={this.state.medal}
+                block={this.state.block}
+                gift={this.state.gift}
+                welcome={this.state.welcome}
+                subscribe={this.state.subscribe}
+                local={this.state.local}
+                handleChowcaseChange = {handleChowcaseChange}/>
+
+                <AdvertSet/>
+
                 <SaveButton logSet = {logSet}/>
             </Container>
         )
